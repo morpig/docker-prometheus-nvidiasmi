@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-runtime
+FROM nvidia/cuda:8.0-runtime
 
 LABEL maintainer='Michaël "e7d" Ferrand <michael@e7d.io>'
 
