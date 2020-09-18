@@ -326,8 +326,6 @@ func metrics(w http.ResponseWriter, r *http.Request) {
 	xml.Unmarshal(stdout, &xmlData)
 
 	// Output
-	io.WriteString(w, formatValue("nvidiasmi_driver_version", "", xmlData.DriverVersion))
-	io.WriteString(w, formatValue("nvidiasmi_cuda_version", "", xmlData.CudaVersion))
 	io.WriteString(w, formatValue("nvidiasmi_attached_gpus", "", xmlData.AttachedGPUs))
 	for _, GPU := range xmlData.GPU {
 		io.WriteString(w, formatValue("nvidiasmi_pci_pcie_gen_max", "id=\""+GPU.Id+"\",uuid=\""+GPU.UUID+"\",name=\""+GPU.ProductName+"\"", GPU.PCI.GPULinkInfo.PCIeGen.Max))
